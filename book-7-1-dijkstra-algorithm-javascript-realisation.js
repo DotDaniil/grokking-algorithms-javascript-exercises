@@ -4,26 +4,36 @@ const parents = {};
 const processed = [];
 
 graph["start"] = {};
-graph["start"]["a"] = 6;
-graph["start"]["b"] = 2;
+graph["start"]["a"] = 10;
+// graph["start"]["b"] = 2;
 
 graph["a"] = {};
-graph["a"]["fin"] = 1;
+graph["a"]["c"] = 20;
+// graph["a"]["d"] = 2;
 graph["b"] = {};
-graph["b"]["a"] = 3;
-graph["b"]["fin"] = 5;
+graph["b"]["a"] = 1;
+graph["b"]["c"] = 1;
+graph["c"] = {};
+// graph["c"]["d"] = 6;
+graph["c"]["fin"] = 30;
+// graph["d"] = {};
+// graph["d"]["fin"] = 1;
 graph["fin"] = {};
 
 console.log(graph);
 
 const infinity = Infinity;
-costs["a"] = 6;
-costs["b"] = 2;
+costs["a"] = 10;
+costs["b"] = infinity;
+costs["c"] = infinity;
+// costs["d"] = infinity;
 costs["fin"] = infinity;
 
 parents["a"] = "start";
-parents["b"] = "start";
-parents["fin"] = null;
+parents["b"] = "c";
+parents["c"] = "a";
+// parents["d"] = null;
+parents["fin"] = "c";
 
 const findLowestCostNode = (costs) => {
 	let lowestCost = infinity;
@@ -63,4 +73,4 @@ const findDijkstra = () => {
 };
 
 console.log("Before Dijkstra:", costs);
-console.log("Resul Dijkstra:" findDijkstra());
+console.log("Resul Dijkstra:", findDijkstra());
