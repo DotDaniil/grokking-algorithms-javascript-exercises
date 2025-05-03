@@ -62,3 +62,5 @@ const mergeTwoLists = (list1, list2) => {
 
     return dummy.next;
 };
+
+// The best description of solution is here: https://www.geeksforgeeks.org/merge-two-sorted-lists-place/
