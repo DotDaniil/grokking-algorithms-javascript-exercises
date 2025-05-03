@@ -54,7 +54,7 @@ const reverseListRecursively = function(head) {
     if (head === null || head.next === null) {
         return head;
     }
-    const newHead = reverseList(head.next);
+    const newHead = reverseListRecursively(head.next);
 
     head.next.next = head;
     head.next = null;
